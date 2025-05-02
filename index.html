@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Flanger Audio Effect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: #fff;
+      padding: 2em;
+      text-align: center;
+    }
+
+    .control-group {
+      margin: 1.5em 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    input[type=range], select {
+      width: 300px;
+    }
+
+    button {
+      padding: 0.6em 1.2em;
+      font-size: 1em;
+      background: #444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎛️ Flanger Effect Controller</h1>
+
+  <div class="control-group">
+    <button id="startBtn">Start Audio Context</button>
+  </div>
+
+  <div class="control-group" style="display: none;">
+    <label for="delayTime">Delay Time (s): <span id="delayTimeVal">Flanger</span></label>
+    <input type="range" id="delayTime" min="0" max="1" step="0.01" value="0.3">
+  </div>
+
+  <div class="control-group">
+    <label for="feedbackGain">Feedback: <span id="feedbackVal">0.5</span></label>
+    <input type="range" id="feedbackGain" min="0" max="0.95" step="0.01" value="0.5">
+  </div>
+
+  <div class="control-group">
+    <label for="masterGain">Master Volume: <span id="gainVal">0.8</span></label>
+    <input type="range" id="masterGain" min="0" max="1" step="0.01" value="0.8">
+  </div>
+
+  <div class="control-group">
+    <label for="lfoRate">LFO Rate (Hz): <span id="lfoRateVal">0.25</span></label>
+    <input type="range" id="lfoRate" min="0.05" max="5" step="0.01" value="0.25">
+  </div>
+
+  <div class="control-group">
+    <label for="lfoDepth">LFO Depth (s): <span id="lfoDepthVal">0.005</span></label>
+    <input type="range" id="lfoDepth" min="0.001" max="0.02" step="0.001" value="0.005">
+  </div>
+
+  <div class="control-group">
+    <label for="oscType">Oscillator Type:</label>
+    <select id="oscType">
+      <option value="sine">Sine</option>
+      <option value="square">Square</option>
+      <option value="sawtooth" selected>Sawtooth</option>
+      <option value="triangle">Triangle</option>
+    </select>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
